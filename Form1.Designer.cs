@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Lblid = new System.Windows.Forms.Label();
             this.LblAd = new System.Windows.Forms.Label();
             this.LblSoyad = new System.Windows.Forms.Label();
@@ -55,9 +55,23 @@
             this.Btnİstatistik = new System.Windows.Forms.Button();
             this.BtnGrafikler = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.personelVeriTabanıDataSet1 = new PersonelKayıtSistemi.PersonelVeriTabanıDataSet1();
+            this.tBLPERSONELBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tBL_PERSONELTableAdapter = new PersonelKayıtSistemi.PersonelVeriTabanıDataSet1TableAdapters.TBL_PERSONELTableAdapter();
+            this.perIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perAdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perSoyadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perSehirDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perMaasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.perDurumDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.perMeslekDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelVeriTabanıDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLPERSONELBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -101,16 +115,6 @@
             this.groupBox2.TabIndex = 4142;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "İşlemler";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox3.Location = new System.Drawing.Point(21, 421);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(745, 121);
-            this.groupBox3.TabIndex = 24545;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "İşlemler";
             // 
             // Lblid
             // 
@@ -250,6 +254,7 @@
             this.BtnListele.TabIndex = 8;
             this.BtnListele.Text = "Listele";
             this.BtnListele.UseVisualStyleBackColor = true;
+            this.BtnListele.Click += new System.EventHandler(this.BtnListele_Click);
             // 
             // BtnKaydet
             // 
@@ -315,22 +320,103 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.perIdDataGridViewTextBoxColumn,
+            this.perAdDataGridViewTextBoxColumn,
+            this.perSoyadDataGridViewTextBoxColumn,
+            this.perSehirDataGridViewTextBoxColumn,
+            this.perMaasDataGridViewTextBoxColumn,
+            this.perDurumDataGridViewCheckBoxColumn,
+            this.perMeslekDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.tBLPERSONELBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 412);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(748, 153);
+            this.dataGridView1.TabIndex = 5455;
+            this.dataGridView1.Tag = "Kayıtlar";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // personelVeriTabanıDataSet1
+            // 
+            this.personelVeriTabanıDataSet1.DataSetName = "PersonelVeriTabanıDataSet1";
+            this.personelVeriTabanıDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tBLPERSONELBindingSource
+            // 
+            this.tBLPERSONELBindingSource.DataMember = "TBL_PERSONEL";
+            this.tBLPERSONELBindingSource.DataSource = this.personelVeriTabanıDataSet1;
+            // 
+            // tBL_PERSONELTableAdapter
+            // 
+            this.tBL_PERSONELTableAdapter.ClearBeforeFill = true;
+            // 
+            // perIdDataGridViewTextBoxColumn
+            // 
+            this.perIdDataGridViewTextBoxColumn.DataPropertyName = "PerId";
+            this.perIdDataGridViewTextBoxColumn.HeaderText = "PerId";
+            this.perIdDataGridViewTextBoxColumn.Name = "perIdDataGridViewTextBoxColumn";
+            this.perIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // perAdDataGridViewTextBoxColumn
+            // 
+            this.perAdDataGridViewTextBoxColumn.DataPropertyName = "PerAd";
+            this.perAdDataGridViewTextBoxColumn.HeaderText = "PerAd";
+            this.perAdDataGridViewTextBoxColumn.Name = "perAdDataGridViewTextBoxColumn";
+            // 
+            // perSoyadDataGridViewTextBoxColumn
+            // 
+            this.perSoyadDataGridViewTextBoxColumn.DataPropertyName = "PerSoyad";
+            this.perSoyadDataGridViewTextBoxColumn.HeaderText = "PerSoyad";
+            this.perSoyadDataGridViewTextBoxColumn.Name = "perSoyadDataGridViewTextBoxColumn";
+            // 
+            // perSehirDataGridViewTextBoxColumn
+            // 
+            this.perSehirDataGridViewTextBoxColumn.DataPropertyName = "PerSehir";
+            this.perSehirDataGridViewTextBoxColumn.HeaderText = "PerSehir";
+            this.perSehirDataGridViewTextBoxColumn.Name = "perSehirDataGridViewTextBoxColumn";
+            // 
+            // perMaasDataGridViewTextBoxColumn
+            // 
+            this.perMaasDataGridViewTextBoxColumn.DataPropertyName = "perMaas";
+            this.perMaasDataGridViewTextBoxColumn.HeaderText = "perMaas";
+            this.perMaasDataGridViewTextBoxColumn.Name = "perMaasDataGridViewTextBoxColumn";
+            // 
+            // perDurumDataGridViewCheckBoxColumn
+            // 
+            this.perDurumDataGridViewCheckBoxColumn.DataPropertyName = "perDurum";
+            this.perDurumDataGridViewCheckBoxColumn.HeaderText = "perDurum";
+            this.perDurumDataGridViewCheckBoxColumn.Name = "perDurumDataGridViewCheckBoxColumn";
+            // 
+            // perMeslekDataGridViewTextBoxColumn
+            // 
+            this.perMeslekDataGridViewTextBoxColumn.DataPropertyName = "perMeslek";
+            this.perMeslekDataGridViewTextBoxColumn.HeaderText = "perMeslek";
+            this.perMeslekDataGridViewTextBoxColumn.Name = "perMeslekDataGridViewTextBoxColumn";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(842, 613);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personelVeriTabanıDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLPERSONELBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,7 +425,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.MaskedTextBox CmbMaas;
         private System.Windows.Forms.RadioButton RdnBekar;
         private System.Windows.Forms.RadioButton RdnEvli;
@@ -363,6 +448,17 @@
         private System.Windows.Forms.Button BtnKaydet;
         private System.Windows.Forms.Button BtnListele;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private PersonelVeriTabanıDataSet1 personelVeriTabanıDataSet1;
+        private System.Windows.Forms.BindingSource tBLPERSONELBindingSource;
+        private PersonelVeriTabanıDataSet1TableAdapters.TBL_PERSONELTableAdapter tBL_PERSONELTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perAdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perSoyadDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perSehirDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perMaasDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn perDurumDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn perMeslekDataGridViewTextBoxColumn;
     }
 }
 

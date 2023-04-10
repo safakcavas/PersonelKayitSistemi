@@ -32,5 +32,27 @@ namespace PersonelKayıtSistemi
         {
             
         }
+
+        private void personelVeriTabanıDataSetBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          
+            
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+          
+        }
+
+        private void BtnListele_Click(object sender, EventArgs e)
+        {
+            this.tBL_PERSONELTableAdapter.Fill(this.personelVeriTabanıDataSet1.TBL_PERSONEL);
+        }
     }
 }
