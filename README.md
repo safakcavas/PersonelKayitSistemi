@@ -1,2 +1,3 @@
 # PersonelKayıtSistemi!
-[git](https://user-images.githubusercontent.com/104231936/231014568-b185368f-969d-4bd0-b85d-8b29cd0ea63b.JPG)
+
+![git](https://user-images.githubusercontent.com/104231936/231014640-5c648efc-b386-4e78-93a2-0a1d540d48d3.JPG)
