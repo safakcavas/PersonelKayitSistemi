@@ -96,26 +96,26 @@ namespace PersonelKayıtSistemi
             baglanti.Close();
         }
 
-        private void RdnEvli_CheckedChanged(object sender, EventArgs e)
-        {
-           if(RdnEvli.Checked == true )
-            {
+        //private void rdnevli_checkedchanged(object sender, eventargs e)
+        //{
+        //   if(rdnevli.checked == true )
+        //    {
 
-            label1.Text = "True";
-            }
+        //    label1.text = "true";
+        //    }
 
-        }
+        //}
 
-        private void RdnBekar_CheckedChanged(object sender, EventArgs e)
-        {
-            if (RdnBekar.Checked == true)
-            {
+        //private void RdnBekar_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (RdnBekar.Checked == true)
+        //    {
 
-                label1.Text = "False";
-            }
+        //        label1.Text = "False";
+        //    }
 
             
-        }
+        //}
 
         private void BtnTemizle_Click(object sender, EventArgs e)
         {
@@ -137,17 +137,45 @@ namespace PersonelKayıtSistemi
            
         }
 
-        private void label1_TextChanged(object sender, EventArgs e)
+        private void BtnSil_Click(object sender, EventArgs e)
         {
-            if(label1.Text=="true")
-            {
-                RdnEvli.Checked = true;
-            }
-            if(label1.Text=="false")
-            {
-                RdnBekar.Checked = true;
-            }
-
+            baglanti.Open();
+            SqlCommand komutsil = new SqlCommand("Delete from Tbl_Personel Where PerId=@k1", baglanti);
+            komutsil.Parameters.AddWithValue("@k1", TxtId.Text);
+            komutsil.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("PERSONEL SİLİNDİ");
         }
+
+        private void BtnGüncelle_Click(object sender, EventArgs e)
+        {
+            baglanti.Open();
+            SqlCommand komutgüncelle = new SqlCommand("Update Tbl_Personel Set PerAd=@a1,PerSoyad=@a2,PerSehir=@a3,PerMaas=@a4,PerDurum=@a5,PerMeslek=@a6 where PerId=@a7", baglanti);
+            komutgüncelle.Parameters.AddWithValue("@a1", TxtAd.Text);
+            komutgüncelle.Parameters.AddWithValue("@a2", TxtSoyad.Text);
+            komutgüncelle.Parameters.AddWithValue("@a3", CmbSehir.Text);
+            komutgüncelle.Parameters.AddWithValue("@a4", MskMaas.Text);
+            komutgüncelle.Parameters.AddWithValue("@a5", label1.Text);
+            komutgüncelle.Parameters.AddWithValue("@a6", TxtMeslek.Text);
+            komutgüncelle.Parameters.AddWithValue("@a7", TxtId.Text);
+            komutgüncelle.ExecuteNonQuery();
+            baglanti.Close();
+            MessageBox.Show("Personel Bilgisi Güncellendi");
+        }
+
+        //private void label1_TextChanged(object sender, EventArgs e)
+        //{
+        //    if(label1.Text=="true")
+        //    {
+        //        RdnEvli.Checked = true;
+        //    }
+        //    if(label1.Text=="false")
+        //    {
+        //        RdnBekar.Checked = true;
+        //    }
+
+        //}
+
+
     }
 }

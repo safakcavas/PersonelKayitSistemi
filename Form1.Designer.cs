@@ -126,7 +126,6 @@
             this.RdnBekar.TabStop = true;
             this.RdnBekar.Text = "Bekar";
             this.RdnBekar.UseVisualStyleBackColor = true;
-            this.RdnBekar.CheckedChanged += new System.EventHandler(this.RdnBekar_CheckedChanged);
             // 
             // RdnEvli
             // 
@@ -138,7 +137,6 @@
             this.RdnEvli.TabStop = true;
             this.RdnEvli.Text = "Evli";
             this.RdnEvli.UseVisualStyleBackColor = true;
-            this.RdnEvli.CheckedChanged += new System.EventHandler(this.RdnEvli_CheckedChanged);
             // 
             // TxtMeslek
             // 
@@ -287,6 +285,7 @@
             this.BtnGüncelle.TabIndex = 11;
             this.BtnGüncelle.Text = "Güncelle";
             this.BtnGüncelle.UseVisualStyleBackColor = true;
+            this.BtnGüncelle.Click += new System.EventHandler(this.BtnGüncelle_Click);
             // 
             // BtnSil
             // 
@@ -296,6 +295,7 @@
             this.BtnSil.TabIndex = 10;
             this.BtnSil.Text = "Sil";
             this.BtnSil.UseVisualStyleBackColor = true;
+            this.BtnSil.Click += new System.EventHandler(this.BtnSil_Click);
             // 
             // BtnKaydet
             // 
@@ -413,7 +413,7 @@
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 545347;
             this.label1.Text = "label1";
-            this.label1.TextChanged += new System.EventHandler(this.label1_TextChanged);
+            this.label1.Visible = false;
             // 
             // Form1
             // 
