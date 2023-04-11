@@ -163,6 +163,12 @@ namespace PersonelKayıtSistemi
             MessageBox.Show("Personel Bilgisi Güncellendi");
         }
 
+        private void Btnİstatistik_Click(object sender, EventArgs e)
+        {
+            Form2 fr = new Form2();
+            fr.Show();
+        }
+
         //private void label1_TextChanged(object sender, EventArgs e)
         //{
         //    if(label1.Text=="true")
