@@ -1,6 +1,6 @@
 ﻿namespace PersonelKayıtSistemi
 {
-    partial class Form2
+    partial class Frmİstatistik
     {
         /// <summary>
         /// Required designer variable.

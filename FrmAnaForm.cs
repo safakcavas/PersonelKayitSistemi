@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace PersonelKayıtSistemi
 {
-    public partial class Form1 : Form
+    public partial class FrmAnaForm : Form
     {
-        public Form1()
+        public FrmAnaForm()
         {
             InitializeComponent();
            
@@ -165,8 +165,14 @@ namespace PersonelKayıtSistemi
 
         private void Btnİstatistik_Click(object sender, EventArgs e)
         {
-            Form2 fr = new Form2();
+            Frmİstatistik fr = new Frmİstatistik();
             fr.Show();
+        }
+
+        private void BtnGrafikler_Click(object sender, EventArgs e)
+        {
+            FrmGrafik  frm = new FrmGrafik();
+            frm.Show();
         }
 
         //private void label1_TextChanged(object sender, EventArgs e)

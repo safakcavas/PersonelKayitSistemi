@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace PersonelKayıtSistemi
 {
-    public partial class Form2 : Form
+    public partial class Frmİstatistik : Form
     {
-        public Form2()
+        public Frmİstatistik()
         {
             InitializeComponent();
         }

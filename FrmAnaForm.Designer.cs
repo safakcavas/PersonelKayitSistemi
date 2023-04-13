@@ -1,6 +1,6 @@
 ﻿namespace PersonelKayıtSistemi
 {
-    partial class Form1
+    partial class FrmAnaForm
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAnaForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CmbSehir = new System.Windows.Forms.ComboBox();
             this.MskMaas = new System.Windows.Forms.MaskedTextBox();
@@ -257,6 +257,7 @@
             this.BtnGrafikler.TabIndex = 14;
             this.BtnGrafikler.Text = "Grafikler";
             this.BtnGrafikler.UseVisualStyleBackColor = true;
+            this.BtnGrafikler.Click += new System.EventHandler(this.BtnGrafikler_Click);
             // 
             // Btnİstatistik
             // 
@@ -416,7 +417,7 @@
             this.label1.Text = "label1";
             this.label1.Visible = false;
             // 
-            // Form1
+            // FrmAnaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -427,8 +428,8 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FrmAnaForm";
+            this.Text = "Personel Kayıt Sistemi";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
