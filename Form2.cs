@@ -50,8 +50,47 @@ namespace PersonelKayıtSistemi
             {
                 lblBekar.Text = dr3[0].ToString();
             }
+            baglanti.Close();
+
+            // sehir sayisi
+            baglanti.Open();
+            SqlCommand komut4 = new SqlCommand("Select Count(distinct(PerSehir)) From TBL_PERSONEL", baglanti); // distinct tekrarsız olarak sayma işlemi yapar kaç farklı şehir olduğunu listeledik 
+            SqlDataReader dr4 = komut4.ExecuteReader();
+            while (dr4.Read())
+            {
+                lblSehir.Text = dr4[0].ToString();
+            }
+            baglanti.Close();
+          
+            // toplam maas
+            baglanti.Open();
+            SqlCommand komut5 = new SqlCommand("Select sum(perMaas)  from TBL_PERSONEL", baglanti);
+            SqlDataReader dr5 = komut5.ExecuteReader();
+            while(dr5.Read())
+            {
+                lblTopMaas.Text= dr5[0].ToString();
+            }
+            baglanti.Close();
 
 
+
+            baglanti.Open();
+            SqlCommand komut6 = new SqlCommand("Select avg( perMaas)  from TBL_PERSONEL",baglanti);
+            SqlDataReader dr6 = komut6.ExecuteReader();
+            while(dr6.Read())
+            {
+                lblOrtMaas.Text = dr6[0].ToString();
+            }
+
+            baglanti.Close();
+        }
+      
+
+
+        
+        private void lblSehir_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

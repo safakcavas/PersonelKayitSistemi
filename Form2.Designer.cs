@@ -83,7 +83,7 @@
             // 
             this.lblToplam.Location = new System.Drawing.Point(184, 52);
             this.lblToplam.Name = "lblToplam";
-            this.lblToplam.Size = new System.Drawing.Size(100, 31);
+            this.lblToplam.Size = new System.Drawing.Size(104, 31);
             this.lblToplam.TabIndex = 6;
             this.lblToplam.Text = "0";
             // 
@@ -91,7 +91,7 @@
             // 
             this.lblEvli.Location = new System.Drawing.Point(184, 91);
             this.lblEvli.Name = "lblEvli";
-            this.lblEvli.Size = new System.Drawing.Size(100, 31);
+            this.lblEvli.Size = new System.Drawing.Size(104, 31);
             this.lblEvli.TabIndex = 7;
             this.lblEvli.Text = "0";
             // 
@@ -99,7 +99,7 @@
             // 
             this.lblBekar.Location = new System.Drawing.Point(184, 130);
             this.lblBekar.Name = "lblBekar";
-            this.lblBekar.Size = new System.Drawing.Size(100, 31);
+            this.lblBekar.Size = new System.Drawing.Size(104, 31);
             this.lblBekar.TabIndex = 8;
             this.lblBekar.Text = "0";
             // 
@@ -107,9 +107,10 @@
             // 
             this.lblSehir.Location = new System.Drawing.Point(184, 169);
             this.lblSehir.Name = "lblSehir";
-            this.lblSehir.Size = new System.Drawing.Size(100, 31);
+            this.lblSehir.Size = new System.Drawing.Size(104, 31);
             this.lblSehir.TabIndex = 9;
             this.lblSehir.Text = "0";
+            this.lblSehir.TextChanged += new System.EventHandler(this.lblSehir_TextChanged);
             // 
             // label5
             // 
@@ -133,7 +134,7 @@
             // 
             this.lblTopMaas.Location = new System.Drawing.Point(184, 216);
             this.lblTopMaas.Name = "lblTopMaas";
-            this.lblTopMaas.Size = new System.Drawing.Size(100, 31);
+            this.lblTopMaas.Size = new System.Drawing.Size(104, 31);
             this.lblTopMaas.TabIndex = 12;
             this.lblTopMaas.Text = "0";
             // 
@@ -141,7 +142,7 @@
             // 
             this.lblOrtMaas.Location = new System.Drawing.Point(184, 262);
             this.lblOrtMaas.Name = "lblOrtMaas";
-            this.lblOrtMaas.Size = new System.Drawing.Size(100, 31);
+            this.lblOrtMaas.Size = new System.Drawing.Size(104, 31);
             this.lblOrtMaas.TabIndex = 13;
             this.lblOrtMaas.Text = "0";
             // 
@@ -163,7 +164,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Corbel", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form2";
             this.Text = "Frmistatistik";
             this.Load += new System.EventHandler(this.Form2_Load);
